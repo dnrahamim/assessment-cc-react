@@ -4,8 +4,12 @@ import { useAppDispatch } from '../../app/hooks';
 import { MonsterBattleCard } from '../../components/monster-battle-card/MonsterBattleCard';
 import { MonstersList } from '../../components/monsters-list/MonstersList';
 import { Title } from '../../components/title/Title';
-import { fetchMonstersData } from '../../reducers/monsters/monsters.actions';
 import {
+  fetchMonstersData,
+  postBattleData,
+} from '../../reducers/monsters/monsters.actions';
+import {
+  selectBattleData,
   selectMonsters,
   selectSelectedMonster,
 } from '../../reducers/monsters/monsters.selectors';
@@ -20,13 +24,14 @@ const BattleOfMonsters = () => {
 
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
+  const battle = useSelector(selectBattleData);
 
   useEffect(() => {
     dispatch(fetchMonstersData());
   }, []);
 
   const handleStartBattleClick = () => {
-    // Fight!
+    dispatch(postBattleData());
   };
 
   return (

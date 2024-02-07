@@ -33,7 +33,7 @@ export const MonsterImage = styled.img(() => ({
 
 export const HorizontalRule = styled.hr(() => ({
   borderBottom: '1px',
-  borderColor: '#0000001A',
+  borderColor: colors.horizontalRuleGrey,
 }));
 
 export const BattleMonsterTitle = styled(Typography)(() => ({

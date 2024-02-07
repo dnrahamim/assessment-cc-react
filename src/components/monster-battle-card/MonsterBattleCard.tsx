@@ -20,7 +20,7 @@ const MonsterBattleCard: React.FC<MonsterCardProps> = ({ title, monster }) => {
       {/* Add this MonsterImage */}
       {monster && <MonsterImage src={monster.imageUrl} />}
       <BattleMonsterTitle>{title!}</BattleMonsterTitle>
-      <HorizontalRule />
+      {monster && <HorizontalRule />}
     </BattleMonsterCard>
   );
 };

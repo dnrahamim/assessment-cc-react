@@ -31,6 +31,22 @@ export const MonsterImage = styled.img(() => ({
   marginBottom: '14px',
 }));
 
+export const HorizontalRule = styled((props: { className?: string }) => {
+  return (
+    <svg
+      className={props.className}
+      width="283"
+      height="2"
+      viewBox="0 0 283 2"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 1L283 0.999975" stroke="black" strokeOpacity="0.1" />
+    </svg>
+  );
+})`
+  width: 100%;
+`;
+
 export const BattleMonsterTitle = styled(Typography)(() => ({
   fontFamily: 'Roboto',
   fontStyle: 'normal',

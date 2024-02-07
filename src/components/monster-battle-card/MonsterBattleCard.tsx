@@ -2,7 +2,8 @@ import { Monster } from '../../models/interfaces/monster.interface';
 import {
   BattleMonsterCard,
   BattleMonsterTitle,
-  // Import MonsterImage
+  // Extra imports
+  HorizontalRule,
   MonsterImage,
 } from './MonsterBattleCard.styled';
 
@@ -19,6 +20,7 @@ const MonsterBattleCard: React.FC<MonsterCardProps> = ({ title, monster }) => {
       {/* Add this MonsterImage */}
       {monster && <MonsterImage src={monster.imageUrl} />}
       <BattleMonsterTitle>{title!}</BattleMonsterTitle>
+      <HorizontalRule />
     </BattleMonsterCard>
   );
 };

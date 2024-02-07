@@ -1,7 +1,7 @@
-interface MonsterStats {
+export interface MonsterStats {
+  hp: number;
   attack: number;
   defense: number;
-  hp: number;
   speed: number;
 }
 

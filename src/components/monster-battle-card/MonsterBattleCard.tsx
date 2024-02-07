@@ -1,17 +1,26 @@
-import { Monster } from "../../models/interfaces/monster.interface"
-import { BattleMonsterCard, BattleMonsterTitle } from "./MonsterBattleCard.styled"
+import { Monster } from '../../models/interfaces/monster.interface';
+import {
+  BattleMonsterCard,
+  BattleMonsterTitle,
+  // Import MonsterImage
+  MonsterImage,
+} from './MonsterBattleCard.styled';
 
 type MonsterCardProps = {
-    monster?: Monster | null
-    title?: string
-}
+  monster?: Monster | null;
+  title?: string;
+};
 
-const MonsterBattleCard: React.FC<MonsterCardProps> = ({ title }) => {
-    return (
-        <BattleMonsterCard centralized>
-            <BattleMonsterTitle>{title!}</BattleMonsterTitle>
-        </BattleMonsterCard>
-    )
-}
+// Add the 'monster' prop
+const MonsterBattleCard: React.FC<MonsterCardProps> = ({ title, monster }) => {
+  return (
+    // remove 'centralized' to make things align left
+    <BattleMonsterCard>
+      {/* Add this MonsterImage */}
+      {monster && <MonsterImage src={monster.imageUrl} />}
+      <BattleMonsterTitle>{title!}</BattleMonsterTitle>
+    </BattleMonsterCard>
+  );
+};
 
-export { MonsterBattleCard }
+export { MonsterBattleCard };

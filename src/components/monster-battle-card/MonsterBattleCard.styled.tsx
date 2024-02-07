@@ -24,18 +24,6 @@ export const BattleMonsterCard = styled(Card, {
   padding: '11px 12px',
 }));
 
-// My Style Component
-export const MonsterImage = styled.img(() => ({
-  borderRadius: '7px',
-  width: '100%',
-  marginBottom: '14px',
-}));
-
-export const HorizontalRule = styled.hr(() => ({
-  borderBottom: '1px',
-  borderColor: colors.horizontalRuleGrey,
-}));
-
 export const BattleMonsterTitle = styled(Typography)(() => ({
   fontFamily: 'Roboto',
   fontStyle: 'normal',
@@ -59,4 +47,16 @@ export const ProgressBar = styled(LinearProgress)(() => ({
     borderRadius: 15,
     backgroundColor: colors.progressColor,
   },
+}));
+
+// My Style Components
+export const MonsterImage = styled.img(() => ({
+  borderRadius: '7px',
+  width: '100%',
+  marginBottom: '14px',
+}));
+
+export const HorizontalRule = styled.hr(() => ({
+  borderBottom: '1px',
+  borderColor: colors.horizontalRuleGrey,
 }));

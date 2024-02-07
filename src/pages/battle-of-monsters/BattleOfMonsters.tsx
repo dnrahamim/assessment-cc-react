@@ -12,6 +12,7 @@ import {
   selectBattleData,
   selectMonsters,
   selectSelectedMonster,
+  selectComputerMonster,
 } from '../../reducers/monsters/monsters.selectors';
 import {
   BattleSection,
@@ -24,6 +25,7 @@ const BattleOfMonsters = () => {
 
   const monsters = useSelector(selectMonsters);
   const selectedMonster = useSelector(selectSelectedMonster);
+  const computerMonster = useSelector(selectComputerMonster);
   const battle = useSelector(selectBattleData);
 
   useEffect(() => {
@@ -51,7 +53,9 @@ const BattleOfMonsters = () => {
           onClick={handleStartBattleClick}>
           Start Battle
         </StartBattleButton>
-        <MonsterBattleCard title="Computer"></MonsterBattleCard>
+        <MonsterBattleCard
+          monster={computerMonster}
+          title={computerMonster?.name || 'Computer'}></MonsterBattleCard>
       </BattleSection>
     </PageContainer>
   );

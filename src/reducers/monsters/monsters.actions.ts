@@ -16,3 +16,7 @@ export const postBattleData = createAsyncThunk<Battle>(
 export const setSelectedMonster = createAction<Monster | null>(
   'monsters/setSelectedMonster',
 );
+
+export const setComputerMonster = createAction<Monster | null>(
+  'monsters/setComputerMonster',
+);

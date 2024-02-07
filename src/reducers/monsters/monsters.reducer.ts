@@ -4,18 +4,21 @@ import {
   fetchMonstersData,
   postBattleData,
   setSelectedMonster,
+  setComputerMonster,
 } from './monsters.actions';
 import { Battle } from '../../models/interfaces/battle.interface';
 
 interface MonsterState {
   monsters: Monster[];
   selectedMonster: Monster | null;
+  computerMonster: Monster | null;
   battle: Battle | null;
 }
 
 const initialState: MonsterState = {
   monsters: [],
   selectedMonster: null,
+  computerMonster: null,
   battle: null,
 };
 
@@ -38,6 +41,11 @@ export const monstersReducer = createReducer(initialState, (builder) => {
   builder.addCase(setSelectedMonster, (state, action) => ({
     ...state,
     selectedMonster: action.payload,
+  }));
+
+  builder.addCase(setComputerMonster, (state, action) => ({
+    ...state,
+    computerMonster: action.payload,
   }));
 
   builder.addCase(postBattleData.pending, (state) => ({

@@ -26,16 +26,17 @@ const MonstersList: React.FC<MonstersListProps> = ({ monsters }) => {
   );
 
   const handleMonsterClick = (monster: Monster) => {
-    const value = selectedMonsterId === monster.id ? null : monster.id;
+    const clickedMonsterId =
+      selectedMonsterId === monster.id ? null : monster.id;
     const getComputerMonseter = () =>
       sample(
-        monsters.filter((monster) => monster.id !== selectedMonsterId),
+        monsters.filter((monster) => monster.id !== clickedMonsterId),
       ) as Monster;
-    const computerMonster =
-      selectedMonsterId === null ? null : getComputerMonseter();
-    setSelectedMonsterId(value);
-    dispatch(setSelectedMonster(!value ? null : monster));
-    dispatch(setComputerMonster(!value ? null : computerMonster));
+    const computerMonster = !clickedMonsterId ? null : getComputerMonseter();
+    const newSelectedMonster = !clickedMonsterId ? null : monster;
+    setSelectedMonsterId(clickedMonsterId);
+    dispatch(setSelectedMonster(newSelectedMonster));
+    dispatch(setComputerMonster(computerMonster));
   };
 
   return (

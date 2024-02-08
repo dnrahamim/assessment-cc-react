@@ -6,6 +6,7 @@ export interface MonsterStats {
 }
 
 export type StatKey = keyof MonsterStats;
+export const statKeys: StatKey[] = ['hp', 'attack', 'defense', 'speed'];
 
 export interface Monster extends MonsterStats {
   id: string;

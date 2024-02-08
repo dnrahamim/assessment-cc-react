@@ -12,6 +12,10 @@ export const StatBar = ({ statKey, monster }: StatBarProps) => (
     <StatTitle data-testid="stattitle">
       {statKey === 'hp' ? 'HP' : startCase(statKey)}
     </StatTitle>
-    <ProgressBar value={monster[statKey]} variant="determinate" />
+    <ProgressBar
+      data-testid="progressbar"
+      value={monster[statKey]}
+      variant="determinate"
+    />
   </StyledStatBar>
 );

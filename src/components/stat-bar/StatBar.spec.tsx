@@ -23,7 +23,11 @@ const monsterCardFactory = (data = monster) => {
 describe('StatBar', () => {
   it('should render the StatBar', () => {
     monsterCardFactory();
-    const statbar = screen.getByTestId('statbar');
-    expect(statbar).toBeVisible();
+    const statBar = screen.getByTestId('statbar');
+    const statTitle = screen.getByTestId('stattitle');
+    const progressBar = screen.getByTestId('progressbar');
+    expect(statBar).toBeVisible();
+    expect(statTitle.textContent?.toLowerCase()).toEqual(statKey);
+    expect(progressBar).toBeVisible();
   });
 });

@@ -1,3 +1,8 @@
+export interface PostBattleBody {
+  monster1Id: string;
+  monster2Id: string;
+}
+
 interface Winner {
   id: string;
   name: string;

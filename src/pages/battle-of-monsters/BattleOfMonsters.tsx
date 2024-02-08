@@ -33,7 +33,15 @@ const BattleOfMonsters = () => {
   }, []);
 
   const handleStartBattleClick = () => {
-    dispatch(postBattleData());
+    if (!selectedMonster || !computerMonster) {
+      return null;
+    }
+    dispatch(
+      postBattleData({
+        monster1Id: selectedMonster.id,
+        monster2Id: computerMonster.id,
+      }),
+    );
   };
 
   return (

@@ -1,4 +1,4 @@
-import { Monster, StatKey } from '../../models/interfaces/monster.interface';
+import { Monster } from '../../models/interfaces/monster.interface';
 import { StatBar } from '../stat-bar/StatBar';
 import {
   BattleMonsterCard,

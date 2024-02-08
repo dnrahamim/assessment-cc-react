@@ -5,6 +5,7 @@ import { Monster } from '../../models/interfaces/monster.interface';
 import {
   setSelectedMonster,
   setComputerMonster,
+  clearBattleData,
 } from '../../reducers/monsters/monsters.actions';
 import {
   Image,
@@ -37,6 +38,7 @@ const MonstersList: React.FC<MonstersListProps> = ({ monsters }) => {
     setSelectedMonsterId(clickedMonsterId);
     dispatch(setSelectedMonster(newSelectedMonster));
     dispatch(setComputerMonster(computerMonster));
+    dispatch(clearBattleData());
   };
 
   return (

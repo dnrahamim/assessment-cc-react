@@ -1,13 +1,13 @@
-import { WinnerDisplayContainer, WinnerText } from "./WinnerDisplay.styled"
+import { WinnerDisplayContainer, WinnerText } from './WinnerDisplay.styled';
 
 type Props = {
-    text: string;
-}
+  text: string;
+};
 
 const WinnerDisplay: React.FC<Props> = ({ text }) => (
-    <WinnerDisplayContainer>
-        <WinnerText>{text} wins!</WinnerText>
-    </WinnerDisplayContainer>
-)
+  <WinnerDisplayContainer>
+    <WinnerText>{text}</WinnerText>
+  </WinnerDisplayContainer>
+);
 
-export { WinnerDisplay }
+export { WinnerDisplay };

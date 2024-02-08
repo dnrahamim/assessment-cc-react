@@ -11,6 +11,8 @@ export const fetchMonstersData = createAsyncThunk<Monster[]>(
   MonsterService.getAll,
 );
 
+export const clearBattleData = createAction('monsters/clearBattleData');
+
 export const postBattleData = createAsyncThunk<Battle, PostBattleBody>(
   'monsters/postBattle',
   MonsterService.postBattle,

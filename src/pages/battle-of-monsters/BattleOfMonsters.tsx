@@ -19,6 +19,7 @@ import {
   PageContainer,
   StartBattleButton,
 } from './BattleOfMonsters.styled';
+import { WinnerDisplay } from '../../components/winner-display/WinnerDisplay';
 
 const BattleOfMonsters = () => {
   const dispatch = useAppDispatch();
@@ -49,6 +50,12 @@ const BattleOfMonsters = () => {
       <Title>Battle of Monsters</Title>
 
       <MonstersList monsters={monsters} />
+
+      {battle && (
+        <WinnerDisplay
+          text={battle.tie ? 'Tie - No winner' : `${battle.winner.name} wins!`}
+        />
+      )}
 
       <BattleSection>
         <MonsterBattleCard

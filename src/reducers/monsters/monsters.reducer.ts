@@ -5,6 +5,7 @@ import {
   postBattleData,
   setSelectedMonster,
   setComputerMonster,
+  clearBattleData,
 } from './monsters.actions';
 import { Battle } from '../../models/interfaces/battle.interface';
 
@@ -61,5 +62,10 @@ export const monstersReducer = createReducer(initialState, (builder) => {
   builder.addCase(postBattleData.fulfilled, (state, action) => ({
     ...state,
     battle: action.payload,
+  }));
+
+  builder.addCase(clearBattleData, (state) => ({
+    ...state,
+    battle: null,
   }));
 });

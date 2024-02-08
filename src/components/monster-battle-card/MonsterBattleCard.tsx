@@ -27,10 +27,12 @@ const MonsterBattleCard: React.FC<MonsterCardProps> = ({ title, monster }) => {
     return <EmptyBattleCard title={title} />;
   }
   return (
-    <BattleMonsterCard>
+    <BattleMonsterCard data-testid="monster-battle-card">
       {/* Add this MonsterImage */}
       {monster && <MonsterImage src={monster.imageUrl} />}
-      <BattleMonsterTitle>{title!}</BattleMonsterTitle>
+      <BattleMonsterTitle data-testid="battle-monster-title">
+        {title!}
+      </BattleMonsterTitle>
       {monster && <HorizontalRule />}
       <StatBar statKey="hp" monster={monster} />
       <StatBar statKey="attack" monster={monster} />

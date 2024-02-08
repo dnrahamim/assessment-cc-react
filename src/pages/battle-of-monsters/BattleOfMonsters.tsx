@@ -61,7 +61,8 @@ const BattleOfMonsters = () => {
         <MonsterBattleCard
           // Pass in selectedMonster
           monster={selectedMonster}
-          title={selectedMonster?.name || 'Player'}></MonsterBattleCard>
+          title={selectedMonster?.name || 'Player'}
+        />
         <StartBattleButton
           data-testid="start-battle-button"
           disabled={selectedMonster === null}
@@ -70,7 +71,8 @@ const BattleOfMonsters = () => {
         </StartBattleButton>
         <MonsterBattleCard
           monster={computerMonster}
-          title={computerMonster?.name || 'Computer'}></MonsterBattleCard>
+          title={computerMonster?.name || 'Computer'}
+        />
       </BattleSection>
     </PageContainer>
   );
